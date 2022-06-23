@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+ int
+ float
+ bool
+ double
+ char
+ unsigned int
  
  
  
@@ -64,10 +64,29 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+
+    int myAge = 3;
+    int counter = 0;
+    int volume = 10;
+    float lenght = 10.5f;
+    float width = 5.5f;
+    float height = 8.1f;
+    bool isTrue = true;
+    bool isFalse = false;
+    bool lastCall = false;
+    double attack = 0.2;
+    double decay = 1.8;
+    double release = 3.1;
+    char firstLetter = 'a';
+    char secondLetter = 'b';
+    char lastLetter ='z';
+    unsigned int player = 5;
+    unsigned int enemy = 20;
+    unsigned int gameLevel = 2;
     
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, myAge, counter, volume, lenght, width, height, isTrue, isFalse, lastCall, attack, decay, release, firstLetter, secondLetter, lastLetter, player, enemy, gameLevel); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,43 +103,80 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int addNumbers(int numOne, int numTwo)
+{
+    ignoreUnused(numOne, numTwo);
+    return{};
+}
 /*
  2)
  */
-
+void setVolumeLevel(int volumeLevel)
+{
+    ignoreUnused(volumeLevel);
+}
 /*
  3)
  */
-
+bool shouldIGoOrShouldIStay(int numberOfDrinks, bool isMusicGood)
+{
+    ignoreUnused(numberOfDrinks, isMusicGood);
+    return{};
+}
 /*
  4)
  */
-
+void playTrack(int trackNr, bool cdInside)
+{
+    ignoreUnused(trackNr, cdInside);
+}
 /*
  5)
  */
-
+void makeCoffee(int numberOfCups = 2, int amountWater = 10, bool extraHot = true)
+{
+    ignoreUnused(numberOfCups, amountWater, extraHot);
+}
 /*
  6)
  */
-
+int feedCat(int catAge = 5, int catWeight = 5, int foodType = 1)
+{
+    ignoreUnused(catAge, catWeight, foodType);
+    return{};
+}
 /*
  7)
  */
-
+float getVolume(double lenght, double width, int height = 10)
+{
+    ignoreUnused(lenght, width, height);
+    return{};
+}
 /*
  8)
  */
-
+double getEnvelope( double attack, double decay, double release = 5.1)
+{
+    ignoreUnused(attack, decay, release);
+    return{};
+}
 /*
  9)
  */
-
+float getFilter (float cutoff, float resonance = 5.1f, float drive = 3.1f)
+{
+    ignoreUnused(cutoff, resonance, drive);
+    return{};
+}
 /*
  10)
  */
-
+double calculatePrice( double price, double tax = 1.19)
+{
+    ignoreUnused(price, tax);
+    return{};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -141,27 +197,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto sum = addNumbers(2, 7);
     //2)
-    
+    setVolumeLevel(100);
     //3)
-    
+    auto questionOfTheDay = shouldIGoOrShouldIStay(10, true);
     //4)
-    
+    playTrack(1, false);
     //5)
-    
+    makeCoffee(1, 10, true);
     //6)
-    
+    auto catFeeder = feedCat(1, 10, 2);
     //7)
-    
+    auto calculateVolume = getVolume(2.5, 2.8, 5);
     //8)
-    
+    auto auxEnvelope = getEnvelope(0.2, 2.5, 3.6);
     //9)
-    
+    auto filterA = getFilter(25.3f, 5.5f, 4.2f);
     //10)
+    auto priceCalculation = calculatePrice(1.99, 1.19);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, sum, questionOfTheDay, catFeeder, calculateVolume, auxEnvelope, filterA, priceCalculation);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
